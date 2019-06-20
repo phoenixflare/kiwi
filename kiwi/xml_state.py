@@ -1698,6 +1698,25 @@ class XMLState(object):
 
         return option_list
 
+    def get_fs_create_option_list(self):
+        """
+        Get a list of the root filesystem create options
+
+        The list contains one element with the information from the
+        fscreateoptions attribute. The value there is passed along to
+        the `mkfs` command.
+
+        :return: max one element list with mount option string
+
+        :rtype: list
+        """
+        option_list = []
+        create_options = self.build_type.get_fscreateoptions()
+        if create_options:
+            option_list = [create_options]
+
+        return option_list
+
     def get_derived_from_image_uri(self):
         """
         Uri object of derived image if configured

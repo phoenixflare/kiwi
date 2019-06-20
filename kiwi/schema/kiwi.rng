@@ -2177,6 +2177,15 @@ partitions</a:documentation>
         <sch:param name="types" value="vmx oem"/>
       </sch:pattern>
     </define>
+    <define name="k.type.fscreateoptions.attribute">
+      <attribute name="fscreateoptions">
+        <a:documentation>Additional command line flags to be passed to the command line
+application that creates the requested filesystem. Note that the
+flags are passed as they are without any additional post-processing.
+This attribute should be used with extreme caution, as kiwi does not
+guarantee how exactly the filesystem will be created.</a:documentation>
+      </attribute>
+    </define>
     <define name="k.type.fsmountoptions.attribute">
       <attribute name="fsmountoptions">
         <a:documentation>Specifies the filesystem mount options which also ends up in fstab
@@ -2581,6 +2590,9 @@ default.</a:documentation>
         </optional>
         <optional>
           <ref name="k.type.fsmountoptions.attribute"/>
+        </optional>
+        <optional>
+          <ref name="k.type.fscreateoptions.attribute"/>
         </optional>
         <optional>
           <ref name="k.type.gcelicense.attribute"/>

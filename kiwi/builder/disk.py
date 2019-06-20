@@ -282,6 +282,8 @@ class DiskBuilder(object):
             volume_manager_custom_parameters = {
                 'fs_mount_options':
                     self.custom_root_mount_args,
+                'fs_create_options':
+                    self.xml_state.get_fs_create_option_list(),
                 'root_label':
                     self.disk_setup.get_root_label(),
                 'root_is_snapshot':
