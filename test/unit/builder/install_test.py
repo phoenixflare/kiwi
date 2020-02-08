@@ -207,6 +207,9 @@ class TestInstallImageBuilder:
         self.boot_image_task.include_module.assert_called_once_with(
             'kiwi-dump', install_media=True
         )
+        self.boot_image_task.include_module.assert_called_once_with(
+            'kiwi-dump-reboot', install_media=True
+        )
         self.boot_image_task.omit_module.assert_called_once_with(
             'multipath', install_media=True
         )
@@ -397,6 +400,9 @@ class TestInstallImageBuilder:
 
         self.boot_image_task.include_module.assert_called_once_with(
             'kiwi-dump', install_media=True
+        )
+        self.boot_image_task.include_module.assert_called_once_with(
+            'kiwi-dump-reboot', install_media=True
         )
         self.boot_image_task.omit_module.assert_called_once_with(
             'multipath', install_media=True
