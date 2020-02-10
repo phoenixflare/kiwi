@@ -47,3 +47,4 @@ else
     # Standard deployment will use kexec to activate and boot the
     # deployed system
     boot_installed_system
+fi
