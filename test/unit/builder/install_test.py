@@ -204,10 +204,10 @@ class TestInstallImageBuilder:
         with patch('builtins.open', m_open, create=True):
             self.install_image.create_install_iso()
 
-        self.boot_image_task.include_module.assert_called_once_with(
+        self.boot_image_task.include_module.assert_called(
             'kiwi-dump', install_media=True
         )
-        self.boot_image_task.include_module.assert_called_once_with(
+        self.boot_image_task.include_module.assert_called(
             'kiwi-dump-reboot', install_media=True
         )
         self.boot_image_task.omit_module.assert_called_once_with(
@@ -398,10 +398,10 @@ class TestInstallImageBuilder:
             )
         ]
 
-        self.boot_image_task.include_module.assert_called_once_with(
+        self.boot_image_task.include_module.assert_called(
             'kiwi-dump', install_media=True
         )
-        self.boot_image_task.include_module.assert_called_once_with(
+        self.boot_image_task.include_module.assert_called(
             'kiwi-dump-reboot', install_media=True
         )
         self.boot_image_task.omit_module.assert_called_once_with(
